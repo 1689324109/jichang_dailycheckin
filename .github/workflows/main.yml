@@ -38,5 +38,6 @@ jobs:
           SCKEY: ${{ secrets.SCKEY }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWD: ${{ secrets.PASSWD }}
+          ANPLUS: ${{ secrets.ANPLUS }}
         run: |
           python3 ./main.py
