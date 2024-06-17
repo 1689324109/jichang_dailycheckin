@@ -17,7 +17,7 @@ def push(content):
     elif Token != '1':
         headers = {'Content-Type': 'application/json'}
         json = {"token": Token, 'title': 'ikuuu签到', 'content': content, "template": "json"}
-        resp = requests.post(f'http://www.pushplus.plus/send', json=json, headers=headers).json()
+        resp = requests.post('http://www.pushplus.plus/send', json=json, headers=headers).json()
         print('push+推送成功' if resp['code'] == 200 else 'push+推送失败')
     else:
         print('未使用消息推送推送！')
