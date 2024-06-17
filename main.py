@@ -13,7 +13,6 @@ Token = os.environ.get('TOKEN')
 # AnPlus
 AnPlus = os.environ.get('ANPLUS')
 def push(content):
-    print(AnPlus)
     if AnPlus != '1' :
         payload = {
             "title": "ikuuu签到："+content,
