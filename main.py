@@ -11,7 +11,7 @@ SCKEY = os.environ.get('SCKEY')
 # PUSHPLUS
 Token = os.environ.get('TOKEN')
 # AnPlus
-AnPlus = os.environ.get('AnPlus')
+AnPlus = os.environ.get('ANPLUS')
 def push(content):
     print(AnPlus)
     if AnPlus != '1' :
