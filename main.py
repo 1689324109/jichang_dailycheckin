@@ -15,6 +15,8 @@ SCKEY = os.environ.get('SCKEY')
 Token = os.environ.get('TOKEN')
 # Token = "3a2edd53a98b4c8bb6ed8165af9008b0"
 # Token = "1"
+AnPlus = os.environ.get('AnPlus')
+# AnPlus = 'J9C9I7V7RI4YEPHHRDHB2WL137ZDAY'
 def push(content):
     if SCKEY != '1':
         url = "https://sctapi.ftqq.com/{}.send?title={}&desp={}".format(SCKEY, 'ikuuu签到', content)
@@ -25,6 +27,19 @@ def push(content):
         json = {"token": Token, 'title': 'ikuuu签到', 'content': content, "template": "json"}
         resp = requests.post('http://www.pushplus.plus/send', json=json, headers=headers).json()
         print('push+推送成功' if resp['code'] == 200 else 'push+推送失败')
+    elif AnPlus != '1' :
+        payload = {
+            "title": "ikuuu签到",
+            "content": content,
+            "channel": "97024"
+        }
+
+        headers = {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+
+        response = requests.post("https://api.anpush.com/push/"+AnPlus, headers=headers, data=payload)
+        print(response)
     else:
         print('未使用消息推送推送！')
 
