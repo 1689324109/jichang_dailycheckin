@@ -15,7 +15,7 @@ AnPlus = os.environ.get('AnPlus')
 def push(content):
     if AnPlus != '1' :
         payload = {
-            "title": "ikuuu签到",
+            "title": "ikuuu签到："+content,
             "content": content,
             "channel": "97024"
         }
@@ -25,7 +25,7 @@ def push(content):
         }
 
         response = requests.post("https://api.anpush.com/push/"+AnPlus, headers=headers, data=payload)
-        print('AnPlus消息推送推送成功' if response.status_code == 200 else 'AnPlus消息推送推送失败')
+        #print('AnPlus消息推送推送成功' if response.status_code == 200 else 'AnPlus消息推送推送失败')
     else:
         print('未使用消息推送推送！')
 
