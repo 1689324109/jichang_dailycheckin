@@ -4,19 +4,14 @@ import requests, json, re, os
 session = requests.session()
 # 配置用户名（一般是邮箱）
 email = os.environ.get('EMAIL')
-# email = "1689324109@qq.com"
 # 配置用户名对应的密码 和上面的email对应上
 passwd = os.environ.get('PASSWD')
-# passwd = "12345678."
 # server酱
 SCKEY = os.environ.get('SCKEY')
-# SCKEY = "1"
 # PUSHPLUS
 Token = os.environ.get('TOKEN')
-# Token = "3a2edd53a98b4c8bb6ed8165af9008b0"
-# Token = "1"
+# AnPlus
 AnPlus = os.environ.get('AnPlus')
-# AnPlus = 'J9C9I7V7RI4YEPHHRDHB2WL137ZDAY'
 def push(content):
     if SCKEY != '1':
         url = "https://sctapi.ftqq.com/{}.send?title={}&desp={}".format(SCKEY, 'ikuuu签到', content)
